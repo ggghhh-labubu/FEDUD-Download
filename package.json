@@ -1,0 +1,26 @@
+{
+  "name": "fedud",
+  "version": "1.0.0",
+  "description": "FEDUD AI 助手",
+  "main": "main.js",
+  "author": "FEDUD Team",
+  "scripts": {
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.fedud.ai",
+    "productName": "FEDUD",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
