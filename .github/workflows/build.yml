@@ -21,7 +21,11 @@ jobs:
       run: npm install --registry=https://registry.npmmirror.com
 
     - name: Build Electron App
-      run: npm run build
+      # 🚀 加上了 -- --publish never，告诉它打包装完就行了，别去发布
+      run: npm run build -- --publish never
+      env:
+        ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
+        ELECTRON_BUILDER_BINARIES_MIRROR: https://npmmirror.com/mirrors/electron-builder-binaries/
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
